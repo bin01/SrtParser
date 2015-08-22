@@ -1,23 +1,15 @@
 package com.bin01.srt;
 
-public class TimeRange
-{
-	private final DateTime start;
-	private final DateTime end;
-	
-	public TimeRange(DateTime start, DateTime end)
-  {
-	  this.start = start;
-	  this.end = end;
+import com.google.auto.value.AutoValue;
+
+@AutoValue
+public abstract class TimeRange {
+
+  public static TimeRange newTimeRange(DateTime start, DateTime end) {
+    return new AutoValue_TimeRange(start, end);
   }
 
-	public DateTime getStart()
-	{
-		return start;
-	}
+  public abstract DateTime getStart();
 
-	public DateTime getEnd()
-	{
-		return end;
-	}
+  public abstract DateTime getEnd();
 }

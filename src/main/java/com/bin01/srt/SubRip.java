@@ -2,19 +2,15 @@ package com.bin01.srt;
 
 import java.util.List;
 
+import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 
-public class SubRip
-{
-	private final List<Block> blocks;
+@AutoValue
+public abstract class SubRip {
 
-	public SubRip(List<Block> blocks)
-	{
-		this.blocks = ImmutableList.<Block> copyOf(blocks);
-	}
+  public static SubRip newSubRip(List<Block> blocks) {
+    return new AutoValue_SubRip(ImmutableList.<Block>copyOf(blocks));
+  }
 
-	public List<Block> getBlocks()
-	{
-		return blocks;
-	}
+  public abstract List<Block> getBlocks();
 }

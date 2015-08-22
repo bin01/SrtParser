@@ -1,37 +1,20 @@
 package com.bin01.srt;
 
-public class DateTime
-{
-	private final int hours;
-	private final int minutes;
-	private final int seconds;
-	private final int millis;
+import com.google.auto.value.AutoValue;
 
-	public DateTime(int hours, int minutes, int seconds, int millis)
-	{
-		this.hours = hours;
-		this.minutes = minutes;
-		this.seconds = seconds;
-		this.millis = millis;
-	}
+@AutoValue
+public abstract class DateTime {
 
-	public int getHours()
-	{
-		return hours;
-	}
+  public static DateTime newDateTime(int hours, int minutes, int seconds, int millis) {
+    return new AutoValue_DateTime(hours, minutes, seconds, millis);
+  }
 
-	public int getMinutes()
-	{
-		return minutes;
-	}
+  public abstract int getHours();
 
-	public int getSeconds()
-	{
-		return seconds;
-	}
+  public abstract int getMinutes();
 
-	public int getMillis()
-	{
-		return millis;
-	}
+  public abstract int getSeconds();
+
+  public abstract int getMillis();
+  
 }
