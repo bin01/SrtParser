@@ -2,33 +2,20 @@ package com.bin01.srt;
 
 import java.util.List;
 
+import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 
-public class Block
-{
-	private final int id;
-	private final TimeRange timeRange;
-	private final List<String> lines;
+@AutoValue
+public abstract class Block {
 
-	public Block(int id, TimeRange timeRange, List<String> lines)
-	{
-		this.id = id;
-		this.timeRange = timeRange;
-		this.lines = ImmutableList.<String> copyOf(lines);
-	}
+  public abstract int getId();
 
-	public int getId()
-	{
-		return id;
-	}
+  public abstract TimeRange getTimeRange();
 
-	public TimeRange getTimeRange()
-	{
-		return timeRange;
-	}
+  public abstract List<String> getLines();
 
-	public List<String> getLines()
-	{
-		return lines;
-	}
+  public static Block newBlock(int id, TimeRange timeRange, List<String> lines) {
+    return new AutoValue_Block(id, timeRange, ImmutableList.<String>copyOf(lines));
+  }
+
 }
