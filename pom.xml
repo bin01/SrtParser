@@ -9,7 +9,7 @@
 			<groupId>com.google.auto.value</groupId>
 			<artifactId>auto-value</artifactId>
 			<version>1.1</version>
-			<scope>optional</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -40,7 +40,7 @@
 			<plugin>
 				<groupId>org.antlr</groupId>
 				<artifactId>antlr4-maven-plugin</artifactId>
-				<version>4.3</version>
+				<version>4.5</version>
 				<configuration>
 					<visitor>true</visitor>
 				</configuration>
