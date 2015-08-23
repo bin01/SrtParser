@@ -9,7 +9,7 @@
 			<groupId>com.google.auto.value</groupId>
 			<artifactId>auto-value</artifactId>
 			<version>1.1</version>
-			<scope>provided</scope>
+			<scope>optional</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -19,7 +19,7 @@
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>
-			<version>4.3</version>
+			<version>4.5</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -31,6 +31,10 @@
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
+                    <annotationProcessors>
+                        <annotationProcessor>com.google.auto.value.processor.AutoValueProcessor</annotationProcessor>
+                        <annotationProcessor>org.antlr.v4.runtime.misc.NullUsageProcessor</annotationProcessor>
+                    </annotationProcessors>
 				</configuration>
 			</plugin>
 			<plugin>
